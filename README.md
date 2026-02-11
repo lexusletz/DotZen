@@ -17,27 +17,27 @@ DotZen automates the synchronization of your dotfiles repository and creates sym
 
 ### Download Pre-built Releases
 
-Download the precompiled binary for your system from the [Releases](https://github.com/jpinos-dev/dotzen/releases) page:
+Download the precompiled binary for your system from the [Releases](https://github.com/lexusletz/dotzen/releases) page:
 
 #### macOS
 ```bash
 # Intel Macs
-curl -L https://github.com/jpinos-dev/dotzen/releases/latest/download/dotzen-darwin-amd64.tar.gz | tar -xz
+curl -L https://github.com/lexusletz/dotzen/releases/latest/download/dotzen-darwin-amd64.tar.gz | tar -xz
 sudo mv dotzen /usr/local/bin/
 
 # Apple Silicon (M1/M2)
-curl -L https://github.com/jpinos-dev/dotzen/releases/latest/download/dotzen-darwin-arm64.tar.gz | tar -xz
+curl -L https://github.com/lexusletz/dotzen/releases/latest/download/dotzen-darwin-arm64.tar.gz | tar -xz
 sudo mv dotzen /usr/local/bin/
 ```
 
 #### Linux
 ```bash
 # x86_64
-curl -L https://github.com/jpinos-dev/dotzen/releases/latest/download/dotzen-linux-amd64.tar.gz | tar -xz
+curl -L https://github.com/lexusletz/dotzen/releases/latest/download/dotzen-linux-amd64.tar.gz | tar -xz
 sudo mv dotzen /usr/local/bin/
 
 # ARM64
-curl -L https://github.com/jpinos-dev/dotzen/releases/latest/download/dotzen-linux-arm64.tar.gz | tar -xz
+curl -L https://github.com/lexusletz/dotzen/releases/latest/download/dotzen-linux-arm64.tar.gz | tar -xz
 sudo mv dotzen /usr/local/bin/
 ```
 
@@ -56,7 +56,7 @@ sudo mv dotzen /usr/local/bin/
 #### Installation
 ```bash
 # Clone the repository
-git clone https://github.com/jpinos-dev/dotzen.git
+git clone https://github.com/lexusletz/dotzen.git
 cd dotzen
 
 # Build and install
@@ -79,7 +79,7 @@ This will:
 
 ### Configuration
 
-DotZen looks for your dotfiles repository at: `https://github.com/jpinos-dev/dotfiles.git`
+DotZen looks for your dotfiles repository at: `https://github.com/lexusletz/dotfiles.git`
 
 #### Customize Configuration
 
@@ -206,7 +206,7 @@ Contributions are welcome! Please:
 
 ### Reporting Bugs
 
-Use [GitHub Issues](https://github.com/jpinos-dev/dotzen/issues) to report bugs or request features.
+Use [GitHub Issues](https://github.com/lexusletz/dotzen/issues) to report bugs or request features.
 
 ## 📝 Changelog
 
@@ -235,23 +235,23 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 ## 📞 Support
 
 - 📧 Email: [jordypinosdev@gmail.com](mailto:jordypinosdev@gmail.com)
-- 🐛 Issues: [GitHub Issues](https://github.com/jpinos-dev/dotzen/issues)
-- 💬 Discussions: [GitHub Discussions](https://github.com/jpinos-dev/dotzen/discussions)
+- 🐛 Issues: [GitHub Issues](https://github.com/lexusletz/dotzen/issues)
+- 💬 Discussions: [GitHub Discussions](https://github.com/lexusletz/dotzen/discussions)
 
 ---
 
 <p align="center">
-  Made with ❤️ by <a href="https://github.com/jpinos-dev">@jpinos-dev</a>
+  Made with ❤️ by <a href="https://github.com/lexusletz">@lexusletz</a>
 </p>
 
 <p align="center">
   <a href="https://golang.org/">
     <img src="https://img.shields.io/badge/Made%20with-Go-00ADD8?style=for-the-badge&logo=go" alt="Made with Go">
   </a>
-  <a href="https://github.com/jpinos-dev/dotzen/blob/main/LICENSE">
+  <a href="https://github.com/lexusletz/dotzen/blob/main/LICENSE">
     <img src="https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge" alt="License: MIT">
   </a>
-  <a href="https://github.com/jpinos-dev/dotzen/releases">
-    <img src="https://img.shields.io/github/v/release/jpinos-dev/dotzen?style=for-the-badge" alt="Latest Release">
+  <a href="https://github.com/lexusletz/dotzen/releases">
+    <img src="https://img.shields.io/github/v/release/lexusletz/dotzen?style=for-the-badge" alt="Latest Release">
   </a>
 </p>

@@ -27,7 +27,7 @@ func New() (*Config, error) {
 
 	return &Config{
 		HomeDir: homeDir,
-		RepoURL: "https://github.com/jpinos-dev/dotfiles.git",
+		RepoURL: "https://github.com/lexusletz/dotfiles.git",
 		LocalPath: filepath.Join(homeDir, "dotfiles"),
 		Symlinks: getDefaultSymlinks(),
 	}, nil
