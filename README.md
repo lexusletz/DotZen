@@ -1,23 +1,23 @@
 # 🚀 DotZen
 
-**Una herramienta CLI moderna y elegante para gestionar tus dotfiles con facilidad**
+**A modern and elegant CLI tool for managing your dotfiles with ease**
 
-DotZen automatiza la sincronización de tu repositorio de dotfiles y crea symlinks automáticamente, manteniendo tu configuración sincronizada en todos tus sistemas.
+DotZen automates the synchronization of your dotfiles repository and creates symlinks automatically, keeping your configuration synchronized across all your systems.
 
-## ✨ Características
+## ✨ Features
 
-- 🔄 **Sincronización automática** - Clona o actualiza tu repositorio de dotfiles
-- 🔗 **Gestión de symlinks** - Crea automáticamente enlaces simbólicos a tus archivos de configuración
-- 🛡️ **Backup automático** - Respalda archivos existentes antes de crear symlinks
-- 🌍 **Multi-plataforma** - Compatible con macOS, Linux y Windows
-- ⚡ **Rápido y eficiente** - Escrito en Go para máximo rendimiento
-- 🎯 **Configuración simple** - Setup mínimo requerido
+- 🔄 **Automatic Synchronization** - Clone or update your dotfiles repository
+- 🔗 **Symlink Management** - Automatically create symbolic links to your configuration files
+- 🛡️ **Automatic Backup** - Backup existing files before creating symlinks
+- 🌍 **Cross-Platform** - Compatible with macOS, Linux, and Windows
+- ⚡ **Fast and Efficient** - Written in Go for maximum performance
+- 🎯 **Simple Configuration** - Minimal setup required
 
-## 📦 Instalación
+## 📦 Installation
 
-### Descarga de Releases
+### Download Pre-built Releases
 
-Descarga el binario precompilado para tu sistema desde la página de [Releases](https://github.com/jpinos-dev/dotzen/releases):
+Download the precompiled binary for your system from the [Releases](https://github.com/jpinos-dev/dotzen/releases) page:
 
 #### macOS
 ```bash
@@ -43,59 +43,59 @@ sudo mv dotzen /usr/local/bin/
 
 #### Windows
 ```powershell
-# Descargar y extraer manualmente desde GitHub Releases
-# Colocar dotzen.exe en tu PATH
+# Download and extract manually from GitHub Releases
+# Place dotzen.exe in your PATH
 ```
 
-### Compilación desde código fuente
+### Build from Source
 
-#### Requisitos
-- [Go](https://golang.org/dl/) 1.21 o superior
+#### Requirements
+- [Go](https://golang.org/dl/) 1.21 or higher
 - Git
 
-#### Instalación
+#### Installation
 ```bash
-# Clonar el repositorio
+# Clone the repository
 git clone https://github.com/jpinos-dev/dotzen.git
 cd dotzen
 
-# Compilar e instalar
+# Build and install
 make install
 ```
 
-## 🚀 Uso
+## 🚀 Usage
 
-### Uso básico
+### Basic Usage
 ```bash
-# Ejecutar DotZen
+# Run DotZen
 dotzen
 ```
 
-Esto hará:
-1. ✅ Verificar que Git esté instalado
-2. 📥 Clonar o actualizar tu repositorio de dotfiles
-3. 🔗 Crear symlinks para todos los archivos configurados
-4. 📦 Hacer backup de archivos existentes automáticamente
+This will:
+1. ✅ Verify Git is installed
+2. 📥 Clone or update your dotfiles repository
+3. 🔗 Create symlinks for all configured files
+4. 📦 Automatically backup existing files
 
-### Configuración
+### Configuration
 
-DotZen busca tu repositorio de dotfiles en: `https://github.com/jpinos-dev/dotfiles.git`
+DotZen looks for your dotfiles repository at: `https://github.com/jpinos-dev/dotfiles.git`
 
-#### Personalizar la configuración
+#### Customize Configuration
 
-Edita el archivo `internal/config/config.go` para personalizar:
+Edit the `internal/config/config.go` file to customize:
 
 ```go
-// En la función New(), cambia:
-RepoURL: "https://github.com/TU-USUARIO/dotfiles.git",
+// In the New() function, change:
+RepoURL: "https://github.com/YOUR-USERNAME/dotfiles.git",
 
-// En getDefaultSymlinks(), añade tus archivos:
+// In getDefaultSymlinks(), add your files:
 {Source: "nvim", Target: ".config/nvim"},
 {Source: "alacritty", Target: ".config/alacritty"},
-// ... más configuraciones
+// ... more configurations
 ```
 
-### Estructura de dotfiles recomendada
+### Recommended Dotfiles Structure
 ```
 dotfiles/
 ├── .vimrc
@@ -103,135 +103,136 @@ dotfiles/
 ├── .gitconfig
 ├── .tmux.conf
 ├── nvim/
-│ ├── init.vim
-│ └── ...
+│   ├── init.vim
+│   └── ...
 ├── alacritty/
-│ └── alacritty.yml
+│   └── alacritty.yml
 └── README.md
 ```
-## 🛠️ Desarrollo
 
-### Estructura del proyecto
+## 🛠️ Development
+
+### Project Structure
 ```
 dotzen/
-├── cmd/dotzen/ # Punto de entrada principal
+├── cmd/dotzen/          # Main entry point
 ├── internal/
-│ ├── config/ # Configuración
-│ ├── git/ # Operaciones Git
-│ ├── symlink/ # Gestión de symlinks
-│ └── dotfiles/ # Lógica principal
-├── bin/ # Binarios compilados
-├── dist/ # Releases
-├── Makefile
-├── build.sh # Script de compilación Unix
-├── build.ps1 # Script de compilación Windows
+│   ├── config/          # Configuration
+│   ├── git/             # Git operations
+│   ├── symlink/         # Symlink management
+│   └── dotfiles/        # Main orchestration
+├── bin/                 # Compiled binaries
+├── dist/                # Release archives
+├── Makefile             # Build targets
+├── build.sh             # Unix build script
+├── build.ps1            # Windows build script
 └── README.md
 ```
 
-### Comandos de desarrollo
+### Development Commands
 
 ```bash
-# Compilar para desarrollo
+# Build for development
 make build
 
-# Compilar para todas las plataformas
+# Build for all platforms
 make build-all
 
-# Crear release
+# Create release
 make release
 
-# Ejecutar tests
+# Run tests
 make test
 
-# Limpiar archivos generados
+# Clean generated files
 make clean
 
-# Ver todos los comandos disponibles
+# Show all available commands
 make help
 ```
 
-### Scripts de compilación
+### Build Scripts
 
 #### Unix/Linux/macOS
 ```bash
-./build.sh           # Compilar local
-./build.sh --all     # Todas las plataformas
-./build.sh --release # Crear release
-./build.sh --install # Instalar local
+./build.sh           # Build locally
+./build.sh --all     # All platforms
+./build.sh --release # Create release
+./build.sh --install # Install locally
 ```
 
 #### Windows
 ```powershell
-.\build.ps1          # Compilar local
-.\build.ps1 -All     # Todas las plataformas
-.\build.ps1 -Clean   # Limpiar
+.\build.ps1          # Build locally
+.\build.ps1 -All     # All platforms
+.\build.ps1 -Clean   # Clean
 ```
 
-## 🔧 Configuración avanzada
+## 🔧 Advanced Configuration
 
-### Symlinks personalizados
+### Custom Symlinks
 
-Los symlinks se configuran en `internal/config/config.go`:
+Symlinks are configured in `internal/config/config.go`:
 
 ```go
 type SymlinkMapping struct {
-    Source string // Archivo en el repo dotfiles
-    Target string // Destino en el sistema (relativo a $HOME)
+    Source string // File in the dotfiles repo
+    Target string // Destination on the system (relative to $HOME)
 }
 ```
 
-Ejemplos:
+Examples:
 ```go
-{Source: ".vimrc", Target: ".vimrc"},                    // Archivo simple
-{Source: "nvim", Target: ".config/nvim"},                // Directorio completo
-{Source: "scripts/my-script.sh", Target: ".local/bin/my-script.sh"}, // Subdirectorio
+{Source: ".vimrc", Target: ".vimrc"},                             // Simple file
+{Source: "nvim", Target: ".config/nvim"},                         // Full directory
+{Source: "scripts/my-script.sh", Target: ".local/bin/my-script.sh"}, // Subdirectory
 ```
 
-### Variables de entorno
+### Environment Variables
 
-| Variable | Descripción | Por defecto |
-|----------|-------------|-------------|
-| `HOME` | Directorio home del usuario | Detectado automáticamente |
+| Variable | Description | Default |
+|----------|-------------|---------|
+| `HOME` | User home directory | Auto-detected |
 
-## 🤝 Contribuir
+## 🤝 Contributing
 
-¡Las contribuciones son bienvenidas! Por favor:
+Contributions are welcome! Please:
 
-1. Fork el proyecto
-2. Crea una rama para tu feature (`git checkout -b feature/AmazingFeature`)
-3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
-4. Push a la rama (`git push origin feature/AmazingFeature`)
-5. Abre un Pull Request
+1. Fork the project
+2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-### Reportar bugs
+### Reporting Bugs
 
-Usa [GitHub Issues](https://github.com/jpinos-dev/dotzen/issues) para reportar bugs o solicitar features.
+Use [GitHub Issues](https://github.com/jpinos-dev/dotzen/issues) to report bugs or request features.
 
 ## 📝 Changelog
 
 ### v1.0.0
-- ✨ Primera versión estable
-- 🔗 Gestión completa de symlinks
-- 📦 Backup automático de archivos existentes
-- 🌍 Soporte multi-plataforma
-- ⚡ Compilación cruzada para todas las plataformas
+- ✨ First stable release
+- 🔗 Complete symlink management
+- 📦 Automatic backup of existing files
+- 🌍 Cross-platform support
+- ⚡ Cross-compilation for all platforms
 
-## 🛡️ Seguridad
+## 🛡️ Security
 
-- DotZen crea backups automáticos antes de sobrescribir archivos
-- Solo modifica archivos en tu directorio home
-- No requiere permisos de administrador (excepto para instalación global)
+- DotZen creates automatic backups before overwriting files
+- Only modifies files in your home directory
+- Does not require administrator permissions (except for global installation)
 
-## 📄 Licencia
+## 📄 License
 
-Este proyecto está bajo la Licencia MIT. Ver el archivo [LICENSE](LICENSE) para más detalles.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-## 🙏 Reconocimientos
+## 🙏 Acknowledgments
 
-- Inspirado por [GNU Stow](https://www.gnu.org/software/stow/) y otros gestores de dotfiles
-- Construido con ❤️ usando [Go](https://golang.org/)
+- Inspired by [GNU Stow](https://www.gnu.org/software/stow/) and other dotfiles managers
+- Built with ❤️ using [Go](https://golang.org/)
 
-## 📞 Soporte
+## 📞 Support
 
 - 📧 Email: [jordypinosdev@gmail.com](mailto:jordypinosdev@gmail.com)
 - 🐛 Issues: [GitHub Issues](https://github.com/jpinos-dev/dotzen/issues)
@@ -240,7 +241,7 @@ Este proyecto está bajo la Licencia MIT. Ver el archivo [LICENSE](LICENSE) para
 ---
 
 <p align="center">
-  Hecho con ❤️ por <a href="https://github.com/jpinos-dev">@jpinos-dev</a>
+  Made with ❤️ by <a href="https://github.com/jpinos-dev">@jpinos-dev</a>
 </p>
 
 <p align="center">
