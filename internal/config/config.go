@@ -5,15 +5,15 @@ import (
 	"path/filepath"
 )
 
-// Config contiene toda la configuración de la aplicación
+// Config contains all the app configuration
 type Config struct {
-	HomeDir 	string
-	RepoURL 	string
-	LocalPath 	string
-	Symlinks 	[]SymlinkMapping
+	HomeDir   string
+	RepoURL   string
+	LocalPath string
+	Symlinks  []SymlinkMapping
 }
 
-// SymlinkMapping define el mapeo entre archivos fuente y destino
+// SymlinkMapping defines the mapping between source and destination files
 type SymlinkMapping struct {
 	Source string
 	Target string
@@ -26,19 +26,19 @@ func New() (*Config, error) {
 	}
 
 	return &Config{
-		HomeDir: homeDir,
-		RepoURL: "https://github.com/lexusletz/dotfiles.git",
+		HomeDir:   homeDir,
+		RepoURL:   "https://github.com/lexusletz/dotfiles.git",
 		LocalPath: filepath.Join(homeDir, "dotfiles"),
-		Symlinks: getDefaultSymlinks(),
+		Symlinks:  getDefaultSymlinks(),
 	}, nil
 }
 
-// getDefaultSymlinks retorna la configuración por defecto de Symlinks
+// getDefaultSymlinks returns the default Symlinks configuration
 func getDefaultSymlinks() []SymlinkMapping {
-	return []SymlinkMapping {
-		{ Source: "nvim", Target: ".config/nvim" },
-		{ Source: "alacritty", Target: ".config/alacritty" },
-		{ Source: "tmux/.tmux.conf", Target: ".tmux.conf" },
-		{ Source: "ghostty", Target: ".config/ghostty" },
+	return []SymlinkMapping{
+		{Source: "nvim", Target: ".config/nvim"},
+		{Source: "alacritty", Target: ".config/alacritty"},
+		{Source: "tmux/.tmux.conf", Target: ".tmux.conf"},
+		{Source: "ghostty", Target: ".config/ghostty"},
 	}
 }

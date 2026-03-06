@@ -1,25 +1,24 @@
 package main
 
 import (
-	"fmt"
-	"os"
 	"dotzen/internal/config"
 	"dotzen/internal/dotfiles"
+	"fmt"
+	"os"
 )
 
 func main() {
 	cfg, err := config.New()
 
 	if err != nil {
-		fmt.Printf("❌  Error obteniendo configuración: %v\n", err)
+		fmt.Printf("Error obtaining configuration: %v\n", err)
 		os.Exit(1)
 	}
 
 	manager := dotfiles.New(cfg)
 
 	if err := manager.Setup(); err != nil {
-		fmt.Printf("❌ Error en setup: %v\n", err)
+		fmt.Printf("Error in setup: %v\n", err)
 		os.Exit(1)
 	}
 }
-
