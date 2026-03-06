@@ -1,19 +1,19 @@
-# 🚀 DotZen
+# DotZen
 
 **A modern and elegant CLI tool for managing your dotfiles with ease**
 
 DotZen automates the synchronization of your dotfiles repository and creates symlinks automatically, keeping your configuration synchronized across all your systems.
 
-## ✨ Features
+## Features
 
-- 🔄 **Automatic Synchronization** - Clone or update your dotfiles repository
-- 🔗 **Symlink Management** - Automatically create symbolic links to your configuration files
-- 🛡️ **Automatic Backup** - Backup existing files before creating symlinks
-- 🌍 **Cross-Platform** - Compatible with macOS, Linux, and Windows
-- ⚡ **Fast and Efficient** - Written in Go for maximum performance
-- 🎯 **Simple Configuration** - Minimal setup required
+- **Automatic Synchronization** - Clone or update your dotfiles repository
+- **Symlink Management** - Automatically create symbolic links to your configuration files
+- **Automatic Backup** - Backup existing files before creating symlinks
+- **Cross-Platform** - Compatible with macOS, Linux, and Windows
+- **Fast and Efficient** - Written in Go for maximum performance
+- **Simple Configuration** - Minimal setup required
 
-## 📦 Installation
+## Installation
 
 ### Download Pre-built Releases
 
@@ -41,12 +41,6 @@ curl -L https://github.com/lexusletz/dotzen/releases/latest/download/dotzen-linu
 sudo mv dotzen /usr/local/bin/
 ```
 
-#### Windows
-```powershell
-# Download and extract manually from GitHub Releases
-# Place dotzen.exe in your PATH
-```
-
 ### Build from Source
 
 #### Requirements
@@ -59,11 +53,11 @@ sudo mv dotzen /usr/local/bin/
 git clone https://github.com/lexusletz/dotzen.git
 cd dotzen
 
-# Build and install
-make install
+# Install Unix/MacOS
+./build --install
 ```
 
-## 🚀 Usage
+## Usage
 
 ### Basic Usage
 ```bash
@@ -72,10 +66,10 @@ dotzen
 ```
 
 This will:
-1. ✅ Verify Git is installed
-2. 📥 Clone or update your dotfiles repository
-3. 🔗 Create symlinks for all configured files
-4. 📦 Automatically backup existing files
+1. Verify Git is installed
+2. Clone or update your dotfiles repository
+3. Create symlinks for all configured files
+4. Automatically backup existing files
 
 ### Configuration
 
@@ -110,7 +104,7 @@ dotfiles/
 └── README.md
 ```
 
-## 🛠️ Development
+## Development
 
 ### Project Structure
 ```
@@ -129,46 +123,7 @@ dotzen/
 └── README.md
 ```
 
-### Development Commands
-
-```bash
-# Build for development
-make build
-
-# Build for all platforms
-make build-all
-
-# Create release
-make release
-
-# Run tests
-make test
-
-# Clean generated files
-make clean
-
-# Show all available commands
-make help
-```
-
-### Build Scripts
-
-#### Unix/Linux/macOS
-```bash
-./build.sh           # Build locally
-./build.sh --all     # All platforms
-./build.sh --release # Create release
-./build.sh --install # Install locally
-```
-
-#### Windows
-```powershell
-.\build.ps1          # Build locally
-.\build.ps1 -All     # All platforms
-.\build.ps1 -Clean   # Clean
-```
-
-## 🔧 Advanced Configuration
+## Advanced Configuration
 
 ### Custom Symlinks
 
@@ -183,9 +138,9 @@ type SymlinkMapping struct {
 
 Examples:
 ```go
-{Source: ".vimrc", Target: ".vimrc"},                             // Simple file
-{Source: "nvim", Target: ".config/nvim"},                         // Full directory
-{Source: "scripts/my-script.sh", Target: ".local/bin/my-script.sh"}, // Subdirectory
+{ Source: ".vimrc", Target: ".vimrc" },                                 // Simple file
+{ Source: "nvim", Target: ".config/nvim" },                             // Full directory
+{ Source: "scripts/my-script.sh", Target: ".local/bin/my-script.sh" },  // Subdirectory
 ```
 
 ### Environment Variables
@@ -194,7 +149,7 @@ Examples:
 |----------|-------------|---------|
 | `HOME` | User home directory | Auto-detected |
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome! Please:
 
@@ -208,35 +163,35 @@ Contributions are welcome! Please:
 
 Use [GitHub Issues](https://github.com/lexusletz/dotzen/issues) to report bugs or request features.
 
-## 📝 Changelog
+## Changelog
 
 ### v1.0.0
-- ✨ First stable release
-- 🔗 Complete symlink management
-- 📦 Automatic backup of existing files
-- 🌍 Cross-platform support
-- ⚡ Cross-compilation for all platforms
+- First stable release
+- Complete symlink management
+- Automatic backup of existing files
+- Cross-platform support
+- Cross-compilation for all platforms
 
-## 🛡️ Security
+## Security
 
 - DotZen creates automatic backups before overwriting files
 - Only modifies files in your home directory
 - Does not require administrator permissions (except for global installation)
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - Inspired by [GNU Stow](https://www.gnu.org/software/stow/) and other dotfiles managers
 - Built with ❤️ using [Go](https://golang.org/)
 
-## 📞 Support
+## Support
 
-- 📧 Email: [jordypinosdev@gmail.com](mailto:jordypinosdev@gmail.com)
-- 🐛 Issues: [GitHub Issues](https://github.com/lexusletz/dotzen/issues)
-- 💬 Discussions: [GitHub Discussions](https://github.com/lexusletz/dotzen/discussions)
+- Email: [jordypinosdev@gmail.com](mailto:jordypinosdev@gmail.com)
+- Issues: [GitHub Issues](https://github.com/lexusletz/dotzen/issues)
+- Discussions: [GitHub Discussions](https://github.com/lexusletz/dotzen/discussions)
 
 ---
 
