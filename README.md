@@ -84,8 +84,8 @@ Edit the `internal/config/config.go` file to customize:
 RepoURL: "https://github.com/YOUR-USERNAME/dotfiles.git",
 
 // In getDefaultSymlinks(), add your files:
-{Source: "nvim", Target: ".config/nvim"},
-{Source: "alacritty", Target: ".config/alacritty"},
+{ Source: "nvim", Target: ".config/nvim" },
+{ Source: "alacritty", Target: ".config/alacritty" },
 // ... more configurations
 ```
 
@@ -189,7 +189,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Support
 
-- Email: [jordypinosdev@gmail.com](mailto:jordypinosdev@gmail.com)
+- Email: [jordypinos3@gmail.com](mailto:jordypinos3@gmail.com)
 - Issues: [GitHub Issues](https://github.com/lexusletz/dotzen/issues)
 - Discussions: [GitHub Discussions](https://github.com/lexusletz/dotzen/discussions)
 
