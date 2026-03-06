@@ -117,9 +117,7 @@ dotzen/
 │   └── dotfiles/        # Main orchestration
 ├── bin/                 # Compiled binaries
 ├── dist/                # Release archives
-├── Makefile             # Build targets
 ├── build.sh             # Unix build script
-├── build.ps1            # Windows build script
 └── README.md
 ```
 
@@ -189,7 +187,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Support
 
-- Email: [jordypinos3@gmail.com](mailto:jordypinos3@gmail.com)
+- Email: [jordypinos3@gmail.com](mailto:@gmail.com)
 - Issues: [GitHub Issues](https://github.com/lexusletz/dotzen/issues)
 - Discussions: [GitHub Discussions](https://github.com/lexusletz/dotzen/discussions)
 
